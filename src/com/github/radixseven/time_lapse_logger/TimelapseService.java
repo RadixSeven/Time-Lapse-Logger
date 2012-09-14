@@ -4,7 +4,7 @@
 *  Licensed under GNU General Public License (GPL) 3 or later    *
 \****************************************************************/
 
-package floe.timelapse;
+package com.github.radixseven.time_lapse_logger;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -204,7 +204,7 @@ public class TimelapseService extends Service {
 		Time now = new Time();
 		now.set( System.currentTimeMillis() );
 
-		outdir = "/sdcard/floe.timelapse/" + now.format("%Y%m%d-%H%M%S/");
+		outdir = "/sdcard/com.github.radixseven.time_lapse_logger/" + now.format("%Y%m%d-%H%M%S/");
 		File tmp = new File(outdir);
 
 		if ((tmp.isDirectory() == false) && (tmp.mkdirs() == false)) {
