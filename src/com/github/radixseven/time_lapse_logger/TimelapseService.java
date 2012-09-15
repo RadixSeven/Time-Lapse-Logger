@@ -139,7 +139,6 @@ public class TimelapseService extends Service {
 
 	// after service has been started, this is called from the Activity to set the preview surface and launch the timer task
 	public void launch( SurfaceView sv, int delay ) {
-
 		try {
 
 			if (isRunning()) {
