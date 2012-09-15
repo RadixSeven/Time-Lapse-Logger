@@ -141,7 +141,10 @@ public class Timelapse extends Activity {
 			// killed now, even if the connection is closed
 			startService( myIntent );
 			mBoundService.launch( sv, getDelay() );
-			((TextView)findViewById( R.id.status )).setText( "running" );
+			TextView stat = (TextView)findViewById( R.id.status );
+			if(stat != null){
+				stat.setText( "running" );
+			}
 		}
 	};
 
@@ -152,7 +155,10 @@ public class Timelapse extends Activity {
 				// terminated once the connection closes.
 				mBoundService.cleanup();
 				stopService( myIntent );
-				((TextView)findViewById( R.id.status )).setText( "stopped" );
+				TextView stat = (TextView)findViewById( R.id.status );
+				if(stat != null){
+					stat.setText( "stopped" );
+				}
 			} catch (IllegalArgumentException e) { }
 		}
 	};
